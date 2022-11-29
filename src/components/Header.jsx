@@ -5,18 +5,23 @@ import iShoppingCart from "../assets/icons/icon_shopping_cart.svg";
 import AccountButton from "./AccountButton.jsx";
 import AppContext from "../context/AppContext";
 import Order from "../containers/Order.jsx";
+import MobileMenu from "./MobileMenu.jsx";
 
 const Header = () => {
   const [toggle, setToogle] = useState(false);
   const [toogleOrders, setToggleOrders] = useState(false);
+  const [toogleMenu, setMenu] = useState(false);
   const { state } = useContext(AppContext);
 
   const handleToggle = () => {
     setToogle(!toggle);
   };
+  const handleMobileMenu = () => {
+    setMenu(!toogleMenu);
+  };
   return (
     <nav>
-      <img src={iMenu} alt="menu" className="menu" />
+      <img src={iMenu} alt="menu" className="menu" onClick={handleMobileMenu} />
 
       <div className="navbar-left">
         <img src={logo} alt="logo" className="logo-nav" />
@@ -59,6 +64,7 @@ const Header = () => {
       </div>
       {toggle ? <AccountButton /> : null}
       {toogleOrders && <Order />}
+      {toogleMenu ? <MobileMenu /> : null}
     </nav>
   );
 };

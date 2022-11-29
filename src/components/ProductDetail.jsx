@@ -6,8 +6,8 @@ const ProdductDetail = ({ product, handleToggle }) => {
   const { images, price, title, category, description } = product;
   return (
     <aside className="product-detail">
-      <div className="product-detail-close">
-        <img src={iClose} alt="close" onClick={handleToggle} />
+      <div className="product-detail-close" onClick={handleToggle}>
+        <img src={iClose} alt="close" />
       </div>
       <img
         src={
