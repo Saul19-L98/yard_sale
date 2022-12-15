@@ -17,7 +17,7 @@ const ProductItem = ({ product }) => {
   };
 
   //console.log(product?.images[0]);
-  console.log(product.images[0] === "");
+  // console.log(product.images[0] === "");
 
   return (
     <div className="product-card">

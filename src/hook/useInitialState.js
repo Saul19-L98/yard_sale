@@ -6,7 +6,6 @@ const initalState = {
 
 const useInitealState = () => {
   const [state, setState] = useState(initalState);
-  console.log(state.cart);
   const addToCart = (payload) => {
     setState({
       ...state,
